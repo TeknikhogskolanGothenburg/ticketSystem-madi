@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using MVCWebCodeByMadi.Helper;
 using MVCWebCodeByMadi.Models;
 
 namespace MVCWebCodeByMadi.Controllers
@@ -15,23 +14,6 @@ namespace MVCWebCodeByMadi.Controllers
         {
             return View();
         }
-
-
-        VenuesRestClient venuesRestClient = new VenuesRestClient();
-
-        public IActionResult Venues()
-        {
-            List<Venues> venueList = new List<Venues>();
-            venueList = venuesRestClient.GetVenues();
-
-
-            return View(venueList);
-
-        }
-
-
-
-       
 
         public IActionResult About()
         {
@@ -47,21 +29,9 @@ namespace MVCWebCodeByMadi.Controllers
             return View();
         }
 
-
-
-
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
     }
 }
-
-       
-
-
-
-
-
-
-
-
-
-
-        
