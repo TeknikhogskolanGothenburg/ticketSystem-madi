@@ -24,7 +24,18 @@ namespace ApiREST.Controllers
         [HttpGet]
         public IEnumerable<Student> GetStudents()
         {
-            return _context.Students;
+            DbSet<Student> students = null;
+            try
+            {
+                students = _context.Students;
+                return students.ToList();
+            }
+            catch(Exception ex)
+            {
+                return new List<Student>();
+            }
+            
+
         }
 
         // GET: api/Students/5

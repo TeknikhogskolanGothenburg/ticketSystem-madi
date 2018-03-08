@@ -33,7 +33,6 @@ namespace MVCWebCodeByMadi
                     var supportedCultures = new List<CultureInfo>
                         {
                             new CultureInfo("en"),
-                            new CultureInfo("en-GB"),
                             new CultureInfo("sv"),
                             new CultureInfo("sv-se"),
                         };
